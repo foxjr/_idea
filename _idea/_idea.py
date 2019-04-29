@@ -4,12 +4,22 @@
 
 class _idea:
     def __init__(self, idea=None, intent=None, entity=None, relationship=None):
-        self.idea = idea.synthesize() if type(idea) == _idea else None
-        self.intent = intent.synthesize() if type(intent) == _idea else None
-        self.entity = entity.synthesize() if type(entity) == _idea else None
-        self.relationship = relationship if type(relationship) == _idea else None
-
-    def synthesize():
-        pass
-    
-        
+        if idea and type(idea) == _idea:
+            self.idea = idea.synthesize()
+        else:
+            self.idea = None
+        if intent and type(intent) == _idea:
+            self.intent = intent.synthesize()
+        else:
+            self.intent = None
+        if entity and type(entity) == _idea:
+            self.entity = entity.synthesize()
+        else:
+            self.entity = None
+        if relationship and type(relationship) == _idea:
+            self.relationship = relationship.synthesize()
+        else:
+            self.relationship = None
+            
+    def synthesize(self):
+        print('in base class')
